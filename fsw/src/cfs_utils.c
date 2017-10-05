@@ -2,7 +2,7 @@
 ** File:
 **   $Id: cfs_utils.c 1.14 2015/03/02 18:30:05EST sstrege Exp  $
 **
-**   Copyright © 2007-2014 United States Government as represented by the 
+**   Copyright ï¿½ 2007-2014 United States Government as represented by the 
 **   Administrator of the National Aeronautics and Space Administration. 
 **   All Other Rights Reserved.  
 **
@@ -528,6 +528,21 @@ boolean CFS_VerifyString(char *Buffer, int32 BufferSize,
 
 } /* End of CFS_VerifyString() */
 
+
+uint64  CFE_TIME_GetTimeInMicros(void)
+{
+	CFE_TIME_SysTime_t  current;
+	uint32 micros = 0;
+	uint64 timeInMicros = 0;
+
+	current = CFE_TIME_GetTime();
+
+	micros = CFE_TIME_Sub2MicroSecs(current.Subseconds);
+
+	timeInMicros = (current.Subseconds * 1000000) + micros;
+
+	return timeInMicros;
+}
 
 /************************/
 /*  End of File Comment */
