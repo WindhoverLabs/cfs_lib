@@ -35,6 +35,10 @@
 #ifndef _cfs_utils_h_
 #define _cfs_utils_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /************************************************************************
 ** Includes
 *************************************************************************/
@@ -250,6 +254,10 @@ boolean CFS_VerifyString(char *Buffer, int32 BufferSize,
                          boolean StringIsRequired, boolean NeedCharTest);
 
 uint64  CFE_TIME_GetTimeInMicros(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _cfs_utils_h_ */
 
