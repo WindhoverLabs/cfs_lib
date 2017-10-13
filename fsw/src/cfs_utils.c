@@ -539,7 +539,7 @@ uint64  CFE_TIME_GetTimeInMicros(void)
 
 	micros = CFE_TIME_Sub2MicroSecs(current.Subseconds);
 
-	timeInMicros = (current.Subseconds * 1000000) + micros;
+	timeInMicros = (current.Seconds * 1000000) + micros;
 
 	return timeInMicros;
 }
