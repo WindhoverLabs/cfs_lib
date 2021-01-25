@@ -2,7 +2,7 @@
 ** File:
 **   $Id: cfs_utils.h 1.6 2015/03/02 18:30:04EST sstrege Exp  $
 **
-**   Copyright © 2007-2014 United States Government as represented by the 
+**   Copyright (c) 2007-2014 United States Government as represented by the
 **   Administrator of the National Aeronautics and Space Administration. 
 **   All Other Rights Reserved.  
 **
@@ -34,6 +34,10 @@
 *************************************************************************/
 #ifndef _cfs_utils_h_
 #define _cfs_utils_h_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /************************************************************************
 ** Includes
@@ -248,6 +252,12 @@ boolean CFS_IsPacketFiltered(CFE_SB_MsgPtr_t MessagePtr,
 */
 boolean CFS_VerifyString(char *Buffer, int32 BufferSize,
                          boolean StringIsRequired, boolean NeedCharTest);
+
+uint64  CFE_TIME_GetTimeInMicros(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _cfs_utils_h_ */
 
