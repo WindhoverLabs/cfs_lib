@@ -31,7 +31,7 @@
  #
  #############################################################################
  
-add_airliner_app_def(cfs_lib
+buildliner_add_app_def(cfs_lib
     FILE CFS_LIB
     SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/cfs_utils.c
